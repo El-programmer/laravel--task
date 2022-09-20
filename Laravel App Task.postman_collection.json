@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "5b3e8284-f248-40cc-8025-5e8b9928c3ce",
+		"name": "Laravel App Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15085886"
+	},
+	"item": [
+		{
+			"name": "user and auth",
+			"item": [
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/user/user-profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"user",
+								"user-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profileData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "marketer@ark-egy.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "marketer@ark-egy.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/user/profileData",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"user",
+								"profileData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "marketer@ark-egy.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "marketer@ark-egy.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Campaigns",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": "/C:/Users/Ahmed/Pictures/WhatsApp Image 2022-06-30 at 11.38.09 AM.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "campaign 1",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "10-10-2022",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "15-10-2022",
+									"type": "text"
+								},
+								{
+									"key": "total",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "daily_budget",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": "/C:/Users/Ahmed/Pictures/3545757.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/dashboard/campaign",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"dashboard",
+								"campaign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "campaign 1",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "10-10-2022",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "15-10-2022",
+									"type": "text"
+								},
+								{
+									"key": "total",
+									"value": "55",
+									"type": "text"
+								},
+								{
+									"key": "daily_budget",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/dashboard/campaign/751d9c54-7e3c-4c83-9d20-d8535ec0432a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"dashboard",
+								"campaign",
+								"751d9c54-7e3c-4c83-9d20-d8535ec0432a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/dashboard/campaign",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"dashboard",
+								"campaign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/dashboard/campaign/751d9c54-7e3c-4c83-9d20-d8535ec0432a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"dashboard",
+								"campaign",
+								"751d9c54-7e3c-4c83-9d20-d8535ec0432a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4444/api/dashboard/campaign/751d9c54-7e3c-4c83-9d20-d8535ec0432a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4444",
+							"path": [
+								"api",
+								"dashboard",
+								"campaign",
+								"751d9c54-7e3c-4c83-9d20-d8535ec0432a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjQ0NDQvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2NjM2OTA2OTAsImV4cCI6MTY2MzY5NDI5MCwibmJmIjoxNjYzNjkwNjkwLCJqdGkiOiJEcjVqR2dhQnc0d0ttcER1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.bAV4UmnJVTbK1U8_A-OLjHXfQMF0MsWwJco-5akCHU0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
