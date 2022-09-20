@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\Sluggable;
+use App\Scopes\UserScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
@@ -31,5 +32,12 @@ class Campaign extends Model
             'user_id' => $this->user_id,
             'created_at' => $this->created_at
         ];
+    }
+
+    protected static function booted()
+    {
+        parent::booted();
+        static::addGlobalScope(new UserScope());
+
     }
 }

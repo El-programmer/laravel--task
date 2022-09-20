@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 
-// genaral Scope for any model
+// general Scope for any model
 class UserScope implements Scope
 {
     public function apply(Builder $builder, Model $model)
